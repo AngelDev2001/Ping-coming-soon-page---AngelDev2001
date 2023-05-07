@@ -11,3 +11,11 @@ mainTextFormEmail.addEventListener("input", (e) => {
         mainTextFormEmail.style.borderColor = "var(--Gray)";
     }
 })
+
+const developer = document.querySelector(".developer");
+const attribution = document.querySelector(".attribution");
+
+developer.addEventListener("click", () => {
+    attribution.classList.toggle("attribution--active");
+})
+

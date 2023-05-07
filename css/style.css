@@ -22,6 +22,7 @@
 /* ROOT */
 .root{
     width: 100%;
+    position: relative;
 }
 
 /* CONTAINER */
@@ -180,6 +181,57 @@
     margin: 2rem 0 3rem;
     color: var(--Gray);
 }
+
+/* ATTRIBUTION */
+.developer{
+    width: 3rem;
+    height: 3rem;
+    padding: .625rem;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px var(--PaleBlue);
+    border-radius: 50%;
+    right: 1rem;
+    bottom: 6rem;
+    animation-name: scale;
+    animation-duration: .6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes scale {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+
+.developer>img{
+    width: 100%;
+    height: 100%;
+    filter: brightness(0) saturate(100%) invert(39%) sepia(91%) saturate(993%) hue-rotate(204deg) brightness(98%) contrast(94%);
+    cursor: pointer;
+}
+
+.attribution{
+    background-color: #fff;
+    box-shadow: 2px 2px 2px var(--PaleBlue);
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    font-size: .75rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    transform: translateX(100%);
+    transition-duration: .6s;
+}
+
+.attribution--active{
+    transform: translateX(0);
+}
+
 
 @media only screen and (max-width: 576px){
 
