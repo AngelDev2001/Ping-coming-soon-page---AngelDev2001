@@ -2,6 +2,7 @@
 
 :root{
     --Blue: hsl(223, 87%, 63%);
+    --BlueOpacity: hsla(223, 87%, 63%, .5);
     --PaleBlue: hsl(223, 100%, 88%);
     --LightRed: hsl(354, 100%, 66%);
     --Gray: hsl(0, 0%, 59%);
@@ -18,8 +19,15 @@
     font-family: var(--font-LibreFranklin);
 }
 
-.container{
+/* ROOT */
+.root{
     width: 100%;
+}
+
+/* CONTAINER */
+.container{
+    width: 50%;
+    margin: 0 auto;
 }
 
 .header,
@@ -34,6 +42,7 @@
     margin: 0 auto;
     justify-content: center;
     align-items: center;
+    padding: 3rem 0;
 }
 
 /* MAIN */
@@ -65,14 +74,18 @@
 .description__second{
     font-size: 1.2rem;
     color: var(--VeryDarkBlue);
+    margin-top: 1rem;
 }
 
 
 /* FORM */
 .main__text-form{
-    width: 50%;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
+    margin: 2rem 0 5rem;
+    position: relative;
 }
 
 .main__text-form input{
@@ -80,10 +93,11 @@
     border-radius: 2rem;
 }
 
-.main__text-form input[type=text]{
+.main__text-form input[type=email]{
     flex: 2 1 0;
     padding: 0 1.2rem;
     border: 1px solid var(--Gray);
+    outline: none;
 }
 
 .main__text-form input[type=button]{
@@ -93,6 +107,26 @@
     color: white;
     font-weight: 600;
     box-shadow: 2px 3px 5px var(--PaleBlue);
+    transition-duration: .3s;
+}
+
+.main__text-form input[type=button]:hover{
+    cursor: pointer;
+    background-color: var(--BlueOpacity);
+}
+
+.form-error{
+    position: absolute;
+    left: 1rem;
+    bottom: -1.5rem;
+    font-size: .75rem;
+    font-style: italic;
+    color: var(--LightRed);
+    opacity: 0;
+}
+
+.form-error--active{
+    opacity: 1;
 }
 
 /* MAIN IMAGE */
@@ -104,6 +138,7 @@
 .footer{
     flex-direction: column;
     align-items: center;
+    margin-top: 5rem;
 }
 
 .footer___socialNetworks{
@@ -119,16 +154,26 @@
     height: 3rem;
     border: 1px solid var(--PaleBlue);
     border-radius: 50%;
+    transition-duration: .3s;
+}
+
+.footer___socialNetworks picture:hover{
+    background-color: var(--Blue);
+}
+
+.footer___socialNetworks picture:hover img{
+    filter: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(0%) hue-rotate(186deg) brightness(103%) contrast(103%);
+    cursor: pointer;
 }
 
 .footer___socialNetworks picture>img{
     width: 100%;
     height: 100%;
     filter: brightness(0) saturate(100%) invert(39%) sepia(91%) saturate(993%) hue-rotate(204deg) brightness(98%) contrast(94%);
-    
 }
 
 .footer__copyRight{
+    margin: 2rem 0 3rem;
     color: var(--Gray);
 }
 
