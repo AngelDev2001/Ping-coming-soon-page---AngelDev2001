@@ -82,10 +82,8 @@
 .main__text-form{
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     gap: 1rem;
     margin: 2rem 0 5rem;
-    position: relative;
 }
 
 .main__text-form input{
@@ -94,14 +92,19 @@
 }
 
 .main__text-form input[type=email]{
-    flex: 2 1 0;
+    width: 100%;
     padding: 0 1.2rem;
     border: 1px solid var(--Gray);
     outline: none;
 }
 
+.form-input{
+    flex: 2 1 auto;
+    position: relative;
+}
+
 .main__text-form input[type=button]{
-    flex: 1 1 0;
+    flex: 1 1 auto;
     background-color: var(--Blue);
     border: none;
     color: white;
@@ -116,9 +119,10 @@
 }
 
 .form-error{
+    width: 100%;
+    padding-left: 1.2rem;
     position: absolute;
-    left: 1rem;
-    bottom: -1.5rem;
+    bottom: -1.2rem;
     font-size: .75rem;
     font-style: italic;
     color: var(--LightRed);
@@ -177,7 +181,40 @@
     color: var(--Gray);
 }
 
+@media only screen and (max-width: 576px){
 
+    .container{
+        width: 90%;
+    }
 
+    .description__first{
+        font-size: 1.5rem;
+    }
+
+    .description__second,
+    .footer__copyRight{
+        font-size: .75rem;
+    }
+
+    .header__logo img{
+        width: 70px;
+    }
+
+    .main__text-form{
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .form-error{
+        padding: 0;
+        text-align: center;
+    }
+
+    .footer___socialNetworks picture{
+        width: 2rem;
+        height: 2rem;
+        padding: .3125rem;
+    }
+}
 
 
