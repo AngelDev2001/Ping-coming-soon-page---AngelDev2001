@@ -95,5 +95,9 @@
     box-shadow: 2px 3px 5px var(--PaleBlue);
 }
 
+/* MAIN IMAGE */
+.main__image img{
+    width: 100%;
+}
 
 
